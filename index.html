@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEO · Citations Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0b15;--s1:#11111e;--s2:#191928;--s3:#22223a;--border:#2a2a44;
+  --t1:#e8e8f8;--t2:#8888bb;--t3:#55557a;
+  --owned:#3b82f6;--earned_media:#10b981;--competition:#f43f5e;
+  --other:#a78bfa;--social:#f59e0b;--earned_institutions:#22d3ee;
+  --font-ui:'Syne',sans-serif;--font-data:'JetBrains Mono',monospace;
+  --r:8px;--tr:0.18s ease;
+}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--t1);font-family:var(--font-ui);font-size:14px;display:flex;flex-direction:column}
+
+/* HEADER */
+.header{display:flex;align-items:center;gap:12px;padding:13px 22px;border-bottom:1px solid var(--border);background:var(--s1);flex-shrink:0}
+.logo{font-size:17px;font-weight:800;letter-spacing:0.08em}
+.logo em{font-style:normal;color:var(--owned)}
+.logo-sep{color:var(--t3);margin:0 4px;font-weight:400}
+.logo-sub{font-size:11px;color:var(--t3);font-family:var(--font-data);letter-spacing:0.03em}
+.h-spacer{flex:1}
+.city-wrap{display:flex;align-items:center;gap:8px}
+.city-lbl{font-size:10px;color:var(--t3);letter-spacing:0.08em;text-transform:uppercase}
+select.city-sel{background:var(--s2);color:var(--t1);border:1px solid var(--border);border-radius:var(--r);padding:7px 11px;font-family:var(--font-ui);font-size:13px;font-weight:700;cursor:pointer;outline:none;transition:border-color var(--tr)}
+select.city-sel:hover,select.city-sel:focus{border-color:var(--owned)}
+.import-btn{background:transparent;color:var(--t2);border:1px solid var(--border);border-radius:var(--r);padding:7px 13px;font-family:var(--font-ui);font-size:12px;font-weight:600;cursor:pointer;transition:all var(--tr);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.import-btn:hover{border-color:var(--t2);color:var(--t1)}
+.import-btn svg{flex-shrink:0}
+
+/* TABS */
+.tabs{display:flex;padding:0 20px;border-bottom:1px solid var(--border);background:var(--s1);flex-shrink:0}
+.tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--t3);font-family:var(--font-ui);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:11px 17px;cursor:pointer;transition:all var(--tr);white-space:nowrap}
+.tab:hover{color:var(--t2)}
+.tab.active{color:var(--t1);border-bottom-color:var(--owned)}
+
+/* MAIN */
+.main{flex:1;display:flex;overflow:hidden}
+.view,.cmp-view{display:flex;flex:1;overflow:hidden}
+.view.off,.cmp-view.off{display:none}
+
+/* SIDEBAR */
+.sidebar{width:248px;flex-shrink:0;border-right:1px solid var(--border);background:var(--s1);overflow-y:auto;display:flex;flex-direction:column;gap:22px;padding:18px 16px}
+.sec-title{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--t3);margin-bottom:10px}
+
+/* DONUT */
+.donut-wrap{position:relative;display:flex;justify-content:center;align-items:center;height:130px}
+.donut-svg{overflow:visible}
+.donut-center{position:absolute;display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.dc-val{font-family:var(--font-data);font-size:24px;font-weight:500;color:var(--t1);line-height:1}
+.dc-lbl{font-size:9px;color:var(--t3);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px}
+
+/* LEGEND */
+.legend{display:flex;flex-direction:column;gap:4px}
+.leg-item{display:flex;align-items:center;gap:8px;padding:4px 6px;border-radius:5px;cursor:pointer;transition:background var(--tr)}
+.leg-item:hover{background:var(--s2)}
+.leg-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.leg-lbl{font-size:11px;color:var(--t2);flex:1}
+.leg-pct{font-family:var(--font-data);font-size:11px;color:var(--t1);font-weight:500}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:10px 11px}
+.stat-v{font-family:var(--font-data);font-size:19px;font-weight:500;color:var(--t1);line-height:1}
+.stat-l{font-size:10px;color:var(--t3);margin-top:3px;line-height:1.2}
+
+/* QUERY CARD */
+.query-card{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:11px;font-size:11px;color:var(--t2);line-height:1.5;font-style:italic}
+
+/* SOURCES PANEL */
+.src-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+
+/* FILTERS */
+.filters{padding:9px 14px;display:flex;gap:6px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);background:var(--s1);flex-shrink:0}
+.f-label{font-size:9px;color:var(--t3);letter-spacing:0.1em;text-transform:uppercase;margin-right:2px;flex-shrink:0}
+.pill{background:var(--s2);border:1px solid var(--border);border-radius:100px;padding:4px 11px;font-family:var(--font-ui);font-size:11px;font-weight:700;color:var(--t3);cursor:pointer;transition:all var(--tr);white-space:nowrap}
+.pill:hover{color:var(--t2);border-color:var(--t3)}
+.pill.on{background:var(--s3);color:var(--t1);border-color:var(--owned)}
+
+/* SOURCE LIST */
+.src-list{flex:1;overflow-y:auto;padding:4px 10px 16px}
+@keyframes slideIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.src-item{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;padding:9px 10px;border-radius:var(--r);border:1px solid transparent;transition:all var(--tr);cursor:default;animation:slideIn 0.2s ease both}
+.src-item:hover{background:var(--s2);border-color:var(--border)}
+.rank{width:28px;height:28px;background:var(--s2);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-data);font-size:10px;font-weight:500;color:var(--t3);flex-shrink:0;margin-top:1px}
+.rank.top{background:var(--s3);border-color:var(--owned);color:var(--owned)}
+.src-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.src-domain{font-family:var(--font-data);font-size:12px;font-weight:500;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.src-path{font-family:var(--font-data);font-size:10px;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.src-meta{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.cat-badge{font-size:9px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:2px 7px;border-radius:100px;border:1px solid;white-space:nowrap}
+.mnt-badge{font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.3);color:var(--owned)}
+.undet-badge{font-size:9px;font-weight:600;padding:2px 7px;border-radius:100px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--social)}
+.bar-wrap{height:3px;background:var(--s3);border-radius:2px;margin-top:2px;overflow:hidden}
+.bar-fill{height:100%;border-radius:2px;min-width:2px;transition:width 0.4s ease}
+.src-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;min-width:62px}
+.share-val{font-family:var(--font-data);font-size:16px;font-weight:500;color:var(--t1);line-height:1}
+.share-unit{font-size:9px;color:var(--t3)}
+.delta{font-family:var(--font-data);font-size:10px;display:flex;align-items:center;gap:2px}
+.delta.up{color:#10b981}.delta.down{color:#f43f5e}.delta.flat{color:var(--t3)}
+.cnt{font-size:10px;color:var(--t3);font-family:var(--font-data)}
+
+/* COMPARE VIEW */
+.cmp-col{display:flex;flex-direction:column;flex:1;overflow:hidden;border-right:1px solid var(--border)}
+.cmp-col:last-child{border-right:none}
+.cmp-hdr{padding:11px 16px;background:var(--s1);border-bottom:1px solid var(--border);flex-shrink:0}
+.cmp-qtag{font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px}
+.cmp-q1 .cmp-qtag{color:var(--owned)}.cmp-q2 .cmp-qtag{color:var(--earned_media)}
+.cmp-qtext{font-size:11px;color:var(--t2);font-style:italic;line-height:1.4}
+.cmp-stats{display:flex;gap:14px;margin-top:8px}
+.cmp-stat{font-size:10px;color:var(--t3);font-family:var(--font-data)}
+.cmp-stat span{color:var(--t1);font-weight:500}
+.cmp-src-list{flex:1;overflow-y:auto;padding:4px 10px 16px}
+
+/* EMPTY */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:10px;color:var(--t3);font-size:12px;text-align:center;padding:40px}
+.empty-icon{font-size:32px;opacity:.4}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:200}
+.modal-bg.off{display:none}
+.modal{background:var(--s1);border:1px solid var(--border);border-radius:14px;padding:26px;width:460px;max-width:94vw;display:flex;flex-direction:column;gap:16px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.modal-title{font-size:16px;font-weight:800}
+.modal-desc{font-size:12px;color:var(--t2);line-height:1.5}
+.mf{display:flex;flex-direction:column;gap:5px}
+.ml{font-size:11px;color:var(--t2);font-weight:700;letter-spacing:0.03em}
+.mi{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:9px 12px;color:var(--t1);font-family:var(--font-ui);font-size:14px;outline:none;transition:border-color var(--tr)}
+.mi:focus{border-color:var(--owned)}
+.ms{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:9px 12px;color:var(--t1);font-family:var(--font-ui);font-size:13px;cursor:pointer;outline:none;transition:border-color var(--tr)}
+.ms:focus{border-color:var(--owned)}
+.drop-zone{border:2px dashed var(--border);border-radius:var(--r);padding:22px;text-align:center;cursor:pointer;transition:all var(--tr);color:var(--t3);font-size:12px}
+.drop-zone:hover,.drop-zone.over{border-color:var(--owned);color:var(--t2);background:rgba(59,130,246,.04)}
+.drop-icon{font-size:26px;margin-bottom:8px}
+.drop-name{color:var(--earned_media);font-weight:600;margin-top:6px;font-family:var(--font-data);font-size:11px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;padding-top:4px}
+.btn-p{background:var(--owned);color:#fff;border:none;border-radius:var(--r);padding:9px 20px;font-family:var(--font-ui);font-size:13px;font-weight:700;cursor:pointer;transition:opacity var(--tr)}
+.btn-p:hover{opacity:.85}
+.btn-s{background:transparent;color:var(--t2);border:1px solid var(--border);border-radius:var(--r);padding:9px 18px;font-family:var(--font-ui);font-size:13px;cursor:pointer;transition:all var(--tr)}
+.btn-s:hover{border-color:var(--t2);color:var(--t1)}
+
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+::-webkit-scrollbar-thumb:hover{background:var(--t3)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo"><em>GEO</em><span class="logo-sep">·</span>Citations</div>
+  <div class="logo-sub">Analyse des sources IA · Fibre optique</div>
+  <div class="h-spacer"></div>
+  <div class="city-wrap">
+    <span class="city-lbl">Ville</span>
+    <select class="city-sel" id="citySelect"></select>
+  </div>
+  <button class="import-btn" id="importBtn">
+    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m-8-8h16"/></svg>
+    Importer CSV
+  </button>
+</div>
+
+<div class="tabs">
+  <button class="tab active" data-tab="q1">Q1 · Conseil opérateur</button>
+  <button class="tab" data-tab="q2">Q2 · Infos locales</button>
+  <button class="tab" data-tab="compare">⟷ Comparaison</button>
+</div>
+
+<div class="main">
+  <div class="view" id="singleView">
+    <div class="sidebar" id="sidebar">
+      <div>
+        <div class="sec-title">Répartition</div>
+        <div class="donut-wrap">
+          <svg class="donut-svg" id="donutSvg" width="130" height="130" viewBox="0 0 130 130"></svg>
+          <div class="donut-center">
+            <div class="dc-val" id="dcVal">—</div>
+            <div class="dc-lbl">sources</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-title">Catégories</div>
+        <div class="legend" id="legend"></div>
+      </div>
+      <div>
+        <div class="sec-title">Métriques</div>
+        <div class="stats-row" id="statsRow"></div>
+      </div>
+      <div>
+        <div class="sec-title">Question posée</div>
+        <div class="query-card" id="queryCard"></div>
+      </div>
+    </div>
+    <div class="src-panel">
+      <div class="filters" id="filters"></div>
+      <div class="src-list" id="srcList"></div>
+    </div>
+  </div>
+
+  <div class="cmp-view off" id="cmpView">
+    <div class="cmp-col cmp-q1">
+      <div class="cmp-hdr">
+        <div class="cmp-qtag">Q1 · Conseil opérateur</div>
+        <div class="cmp-qtext" id="cmpQ1Text"></div>
+        <div class="cmp-stats" id="cmpQ1Stats"></div>
+      </div>
+      <div class="src-list cmp-src-list" id="cmpQ1List"></div>
+    </div>
+    <div class="cmp-col cmp-q2">
+      <div class="cmp-hdr">
+        <div class="cmp-qtag">Q2 · Infos locales</div>
+        <div class="cmp-qtext" id="cmpQ2Text"></div>
+        <div class="cmp-stats" id="cmpQ2Stats"></div>
+      </div>
+      <div class="src-list cmp-src-list" id="cmpQ2List"></div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPORT MODAL -->
+<div class="modal-bg off" id="modalBg">
+  <div class="modal">
+    <div class="modal-title">Importer un fichier CSV</div>
+    <div class="modal-desc">Importe un export Profound (citations) pour une nouvelle ville ou une nouvelle question.</div>
+    <div class="mf">
+      <label class="ml">Nom de la ville</label>
+      <input class="mi" id="mCity" type="text" placeholder="ex : Wavre, Ottignies, Louvain-la-Neuve…">
+    </div>
+    <div class="mf">
+      <label class="ml">Type de question</label>
+      <select class="ms" id="mQuery">
+        <option value="q1">Q1 · Conseil opérateur (« Quel opérateur fibre me conseilles-tu ? »)</option>
+        <option value="q2">Q2 · Infos locales (« Infos fibre à [ville] »)</option>
+      </select>
+    </div>
+    <div class="mf">
+      <label class="ml">Fichier CSV (format export Profound)</label>
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-icon">📂</div>
+        <div>Glisse ton CSV ici ou clique pour parcourir</div>
+        <div class="drop-name" id="dropName"></div>
+        <input type="file" id="fileInput" accept=".csv" style="display:none">
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-s" id="modalCancel">Annuler</button>
+      <button class="btn-p" id="modalConfirm">Importer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════════
+const GEO_DATA = {
+  bierges: {
+    label: "Bierges",
+    q1: {
+      label: "Q1 · Conseil opérateur",
+      fullLabel: "Quel opérateur internet fibre optique me conseilles-tu à Bierges ?",
+      sources: [
+        {rank:1,  page:"selectra.be/fr/telecom/internet",                                          cat:"earned_media",        mentioned:"mentioned",  count:3, cD:3,  share:5.83, sD:5.83},
+        {rank:1,  page:"callmepower.be/fr/telecom/guides/comparatifs/fibre",                        cat:"earned_media",        mentioned:"mentioned",  count:3, cD:3,  share:5.83, sD:5.83},
+        {rank:3,  page:"proximus.be/fr/fibre-optique",                                             cat:"owned",               mentioned:"n/a",        count:4, cD:3,  share:4.05, sD:2.71},
+        {rank:4,  page:"infofibre.be/fr/offres-en-belgique",                                       cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:4,    sD:4},
+        {rank:4,  page:"la-fibre.be/quel-est-labonnement-fibre-moins-cher-en-belgique/pack-internet-tv-gsm", cat:"earned_media", mentioned:"n/a",    count:1, cD:1,  share:4,    sD:4},
+        {rank:4,  page:"unifiber.be/",                                                             cat:"other",               mentioned:"n/a",        count:1, cD:-1, share:4,    sD:0.17},
+        {rank:4,  page:"proximus.be/en/personal/cr_int/cr_fiber.html",                            cat:"owned",               mentioned:"n/a",        count:2, cD:2,  share:4,    sD:4},
+        {rank:8,  page:"lafibreoptique.fr/offre-fibre",                                            cat:"earned_media",        mentioned:"undetected", count:3, cD:3,  share:3.11, sD:3.11},
+        {rank:9,  page:"digi-belgium.be/fr/abonnement-internet-fiber",                             cat:"competition",         mentioned:"n/a",        count:2, cD:2,  share:2.71, sD:2.71},
+        {rank:10, page:"scarlet.be/fr/abonnement-internet/fibre-optique",                          cat:"competition",         mentioned:"n/a",        count:3, cD:1,  share:2.54, sD:-1.29},
+        {rank:10, page:"voo.be/fr/internet/giga",                                                  cat:"competition",         mentioned:"n/a",        count:3, cD:1,  share:2.54, sD:-1.29},
+        {rank:12, page:"numerimo.com/meilleur-operateur-internet-fibre/",                           cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"callmepower.be/fr/telecom/fournisseurs/edpnet/fibre",                       cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:12, page:"ariase.com/box/carte-fibre-optique",                                       cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"reddit.com/r/belgium/comments/18ns06y",                                    cat:"social",              mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:12, page:"reseaux.orange.fr/nos-reseaux/internet-fixe/fibre-optique",                cat:"other",               mentioned:"undetected", count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"lafibreoptique.fr/deploiement-carte-fibre-optique/operateurs-infrastructures", cat:"earned_media",   mentioned:"n/a",        count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"eco-conscient.com/art-2700-quelle-est-la-qualite-du-reseau-des-principaux-fai-francais.html", cat:"earned_media", mentioned:"n/a", count:2, cD:2, share:2, sD:2},
+        {rank:12, page:"verixi.be/",                                                               cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:12, page:"proximus.be/en/id_b_cr_ookla_nperf_award/personal/blog/news/be-the-first-to-know/best-fiber-award-ookla-nperf.html", cat:"owned", mentioned:"mentioned", count:1, cD:1, share:2, sD:2},
+        {rank:12, page:"gofiber.be/fr/fournisseurs/",                                              cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:12, page:"jechange.fr/telecom/internet/operateur-fibre",                             cat:"earned_media",        mentioned:"undetected", count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"ariase.com/box/test-eligibilite",                                          cat:"earned_media",        mentioned:"undetected", count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"proximus.be/en/fiber/unifiber",                                            cat:"owned",               mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:12, page:"lafibreoptique.fr/guide/choisir-offre-fibre-optique",                      cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"ironfle.com/meilleure-fibre-optique/ironfle",                              cat:"other",               mentioned:"n/a",        count:2, cD:2,  share:2,    sD:2},
+        {rank:12, page:"proximus.be/en/fiber",                                                     cat:"owned",               mentioned:"n/a",        count:1, cD:1,  share:2,    sD:2},
+        {rank:28, page:"proximus.be/fr/id_cr_fiber/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous.html", cat:"owned", mentioned:"mentioned", count:2, cD:1, share:1.83, sD:-0.67},
+        {rank:29, page:"unifiber.be/communes/41",                                                  cat:"other",               mentioned:"n/a",        count:2, cD:0,  share:1.43, sD:-2.4},
+        {rank:29, page:"astel.be/operateurs",                                                      cat:"earned_media",        mentioned:"mentioned",  count:2, cD:2,  share:1.43, sD:1.43},
+        {rank:31, page:"astel.be/info/faq/comment-avoir-l-internet-fibre-en-belgique_4975",        cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"selectra.be/fr/telecom/internet/box-wifi",                                 cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"proximus.be/fr/id_cr_fiber_cities_sint_katelijne_waver/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville/fcparent/fiberklaar/sint-katelijne-waver.html", cat:"owned", mentioned:"n/a", count:1, cD:-1, share:1.11, sD:-4.25},
+        {rank:31, page:"astel.be/comparateur/abonnement-internet",                                 cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"dhnet.be/actu/belgique/2025/10/01/cest-officiel-la-marque-voo-appartient-desormais-entierement-a-orange-belgique", cat:"earned_media", mentioned:"n/a", count:1, cD:1, share:1.11, sD:1.11},
+        {rank:31, page:"selectra.be/fr/telecom/internet/internet-pas-cher",                        cat:"earned_media",        mentioned:"mentioned",  count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"7sur7.be/home/proximus-et-orange-voo-se-distinguent-par-leur-part-de-marche",cat:"earned_media",     mentioned:"n/a",        count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"lafibreoptique.fr/comparer-les-offres/orange-sfr",                         cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:1.11, sD:1.11},
+        {rank:31, page:"trends.levif.be/a-la-une/tech/vitesse-telechargement-belgique-voo-orange-telenet-proximus/", cat:"earned_media", mentioned:"n/a", count:1, cD:1, share:1.11, sD:1.11},
+        {rank:40, page:"translate.google.com/translate?u=internet-providers-belgie.be",            cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"selectra.be/fr/telecom/couverture-reseau-des-operateurs",                  cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"selectra.be/fr/telecom/internet/voo-ou-proximus",                          cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"abonnement-tv-internet.be/comparatif-pack/packs-internet-seulement",       cat:"earned_media",        mentioned:"mentioned",  count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"callmepower.be/fr/telecom/guides/comparatifs/abonnement-internet-pas-cher",cat:"earned_media",        mentioned:"mentioned",  count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"selectra.be/fr/telecom/pack",                                              cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"astel.be/operateurs-disponibles/1301/bierges?id=29",                       cat:"earned_media",        mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"selectra.be/fr/telecom/fournisseurs/orange-vs-proximus",                   cat:"earned_media",        mentioned:"mentioned",  count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"wavre.be/en/node/5077",                                                    cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:0.71, sD:0.71},
+        {rank:40, page:"translate.google.com/translate?u=proximus.be/en/id_b_cl_ookla_nperf_award", cat:"other",            mentioned:"n/a",        count:1, cD:0,  share:0.71, sD:-1.79},
+        {rank:40, page:"scarlet.be/fr/abonnement-internet/avantages-fournisseur-internet-moins-cher-belgique", cat:"competition", mentioned:"undetected", count:1, cD:0, share:0.71, sD:-0.62},
+        {rank:40, page:"proximus.be/fr/id_cb_fiber_checktool/independants-et-petites-entreprises/la-fibre-optique-pour-votre-business/la-fibre-est-elle-disponible-chez-vous.html", cat:"owned", mentioned:"n/a", count:1, cD:1, share:0.71, sD:0.71},
+        {rank:40, page:"test-achats.be/hightech/telecom/news/meilleur-operateur-reseau",            cat:"earned_institutions", mentioned:"mentioned",  count:1, cD:0,  share:0.71, sD:-0.62},
+        {rank:40, page:"ibpt.be/consommateurs/telephonie-internet-tv/comparer-les-operateurs/comparer-les-offres/liste-des-operateurs-fixes-et-convergents", cat:"earned_institutions", mentioned:"n/a", count:1, cD:0, share:0.71, sD:-0.62},
+        {rank:40, page:"proximus.be/fr/packs",                                                     cat:"owned",               mentioned:"n/a",        count:1, cD:0,  share:0.71, sD:-0.62},
+      ]
+    },
+    q2: {
+      label: "Q2 · Infos locales",
+      fullLabel: "Que trouves-tu comme information sur la fibre spécifiquement à Bierges en Belgique ?",
+      sources: [
+        {rank:1,  page:"wavre.be/deploiement-fibre-optique-wavre",                                 cat:"other",               mentioned:"n/a",        count:2, cD:-3, share:8.33, sD:-5.95},
+        {rank:2,  page:"proximus.be/fr/id_cr_fiber_checktool/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/la-fibre-est-elle-disponible-chez-vous.html", cat:"owned", mentioned:"n/a", count:3, cD:1, share:6.83, sD:1.4},
+        {rank:3,  page:"unifiber.be/actualites/102la-fibre-optique-prend-de-la-hauteur-a-wavre",   cat:"other",               mentioned:"n/a",        count:2, cD:-1, share:5.5,  sD:-2.79},
+        {rank:3,  page:"astel.be/operateurs-disponibles/1301/bierges?id=29",                       cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:5.5,  sD:5.5},
+        {rank:5,  page:"belcenter.be/",                                                            cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:4.17, sD:4.17},
+        {rank:5,  page:"rew.be/blog/notre-blog-2/deploiement-de-la-fibre-optique-synergie-entre-rew-et-unifiber-78", cat:"other", mentioned:"n/a",   count:1, cD:1,  share:4.17, sD:4.17},
+        {rank:5,  page:"proximus.be/fr/fibre/unifiber",                                            cat:"owned",               mentioned:"n/a",        count:1, cD:1,  share:4.17, sD:4.17},
+        {rank:8,  page:"fibre.guide",                                                              cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"orange.be/fr/produits-et-services/internet/home-fiber",                    cat:"competition",         mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"fiberklaar.be/fr/operateurs",                                              cat:"other",               mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"bouyguestelecom.fr/guide-pratique/internet/comment-avoir-la-fibre",        cat:"other",               mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"uvcw.be/environnement/actus/art-7083",                                     cat:"earned_institutions", mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"gofiber.be/fr/",                                                           cat:"other",               mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"belcenter.be/blog/guide-fibre-optique-entreprise-belgique/",               cat:"other",               mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"infofibre.be/fr/questions-et-reponses/utilisateurs-finaux",                cat:"earned_media",        mentioned:"n/a",        count:2, cD:2,  share:3.33, sD:3.33},
+        {rank:8,  page:"infofibre.be/fr/carte-de-la-fibre-optique",                               cat:"earned_media",        mentioned:"n/a",        count:2, cD:-1, share:3.33, sD:-4.95},
+        {rank:8,  page:"proximus.com/fr/network/fiber/deployment.html",                            cat:"owned",               mentioned:"n/a",        count:2, cD:1,  share:3.33, sD:1.33},
+        {rank:18, page:"proximus.be/fr/packs",                                                     cat:"owned",               mentioned:"n/a",        count:2, cD:2,  share:2.67, sD:2.67},
+        {rank:18, page:"unifiber.be/communes/40",                                                  cat:"other",               mentioned:"n/a",        count:2, cD:1,  share:2.67, sD:1.24},
+        {rank:20, page:"assistance.voo.be/fr/support/abonnement-et-facture/gestion-dabonnement/rachat-orange.html", cat:"competition", mentioned:"n/a", count:1, cD:1, share:1.33, sD:1.33},
+        {rank:20, page:"astel.be/operateurs",                                                      cat:"earned_media",        mentioned:"mentioned",  count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"wavre.be/chantiers-en-cours",                                              cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"comparateur.be/telecom/blog/meilleur-fournisseur-internet-belgique",        cat:"earned_media",        mentioned:"undetected", count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"scarlet.be/fr/abonnement-internet/avantages-fournisseur-internet-moins-cher-belgique", cat:"competition", mentioned:"undetected", count:1, cD:1, share:1.33, sD:1.33},
+        {rank:20, page:"facebook.com/Ville.de.Wavre/posts/travaux-fibre-optique",                  cat:"social",              mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"bipt-data.be/fr/projects/atlas/ftth",                                      cat:"earned_institutions", mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"unifiber.be/communes/41",                                                  cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"selectra.be/fr/telecom/internet/fibre-optique",                            cat:"earned_media",        mentioned:"undetected", count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"bipt-data.be/fr/atlas",                                                    cat:"earned_institutions", mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"test-achats.be/hightech/telecom/news/orange-arrete-voo",                   cat:"earned_institutions", mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"test-achats.be/hightech/telecom/news/digi-belgium-nouvel-operateur-telecom",cat:"earned_institutions", mentioned:"mentioned",  count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"test-achats.be/hightech/telecom/news/meilleur-operateur-reseau",            cat:"earned_institutions", mentioned:"mentioned",  count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"unifiber.be/communes/4",                                                   cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"google.com/viewer/place?mid=%2Fg%2F11shhzjrhd",                            cat:"other",               mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"translate.google.com/translate?u=proximus.be/en/id_b_cl_ookla_nperf_award",cat:"other",              mentioned:"n/a",        count:1, cD:1,  share:1.33, sD:1.33},
+        {rank:20, page:"ibpt.be/consommateurs/telephonie-internet-tv/comparer-les-operateurs/comparer-les-offres/liste-des-operateurs-fixes-et-convergents", cat:"earned_institutions", mentioned:"n/a", count:1, cD:1, share:1.33, sD:1.33},
+      ]
+    }
+  }
+};
+
+// ══════════════════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════════════════
+const CAT_COLORS = {
+  owned:'#3b82f6', earned_media:'#10b981', competition:'#f43f5e',
+  other:'#a78bfa', social:'#f59e0b', earned_institutions:'#22d3ee'
+};
+const CAT_LABELS = {
+  owned:'Owned', earned_media:'Earned media', competition:'Concurrents',
+  other:'Autres', social:'Social', earned_institutions:'Institutions'
+};
+const CAT_ORDER = ['owned','earned_media','competition','earned_institutions','other','social'];
+
+// ══════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════
+const state = {city:'bierges', tab:'q1', cats:new Set(['all']), pendingFile:null, pendingParsed:null};
+
+// ══════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════
+function getDomain(p) {
+  p = p.replace(/^https?:\/\//,'');
+  if(p.startsWith('translate.google.com')) {
+    const m = p.match(/u=https?%3A%2F%2F([^%&\/]+)/);
+    return (m ? decodeURIComponent(m[1]) : 'translate.google.com') + ' ↗';
+  }
+  return p.split('/')[0].split('?')[0];
+}
+function getPath(p) {
+  p = p.replace(/^https?:\/\//,'');
+  const i = p.indexOf('/');
+  if(i<0) return '';
+  const path = p.slice(i);
+  return path.length>58 ? path.slice(0,58)+'…' : path;
+}
+function cc(hex, a) {
+  const r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+function pol(cx,cy,r,deg){const rad=(deg-90)*Math.PI/180;return{x:cx+r*Math.cos(rad),y:cy+r*Math.sin(rad)}}
+function arc(cx,cy,r,s,e){const a=pol(cx,cy,r,s),b=pol(cx,cy,r,e),l=e-s>180?1:0;return`M${a.x},${a.y}A${r},${r},0,${l},1,${b.x},${b.y}`}
+
+// ══════════════════════════════════════════════════
+// DONUT
+// ══════════════════════════════════════════════════
+function renderDonut(sources) {
+  const svg=document.getElementById('donutSvg');
+  document.getElementById('dcVal').textContent=sources.length;
+  svg.innerHTML='';
+  const cx=65,cy=65,r=48;
+  const totals={}, grand=sources.reduce((a,s)=>{totals[s.cat]=(totals[s.cat]||0)+s.share;return a+s.share},0);
+  if(!grand) return;
+  const bg=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  bg.setAttribute('cx',cx);bg.setAttribute('cy',cy);bg.setAttribute('r',r);
+  bg.setAttribute('fill','none');bg.setAttribute('stroke','#22223a');bg.setAttribute('stroke-width','19');
+  svg.appendChild(bg);
+  let sa=0;
+  for(const cat of CAT_ORDER) {
+    if(!totals[cat]) continue;
+    const angle=(totals[cat]/grand)*360;
+    const el=document.createElementNS('http://www.w3.org/2000/svg','path');
+    if(angle>=359.9) {
+      const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',r);
+      c.setAttribute('fill','none');c.setAttribute('stroke',CAT_COLORS[cat]);c.setAttribute('stroke-width','19');
+      c.style.opacity='.85';svg.appendChild(c);
+    } else {
+      el.setAttribute('d',arc(cx,cy,r,sa,sa+angle-0.4));
+      el.setAttribute('fill','none');el.setAttribute('stroke',CAT_COLORS[cat]);el.setAttribute('stroke-width','19');
+      el.style.cssText='opacity:.85;cursor:pointer';
+      el.addEventListener('mouseenter',()=>{el.style.opacity='1';el.setAttribute('stroke-width','24')});
+      el.addEventListener('mouseleave',()=>{el.style.opacity='.85';el.setAttribute('stroke-width','19')});
+      el.addEventListener('click',()=>filterBy(cat));
+      svg.appendChild(el);
+    }
+    sa+=angle;
+  }
+  renderLegend(totals,grand);
+}
+
+function renderLegend(totals,grand) {
+  const el=document.getElementById('legend');el.innerHTML='';
+  for(const cat of CAT_ORDER) {
+    if(!totals[cat]) continue;
+    const pct=((totals[cat]/grand)*100).toFixed(1);
+    const item=document.createElement('div');
+    item.className='leg-item';item.dataset.cat=cat;
+    item.innerHTML=`<div class="leg-dot" style="background:${CAT_COLORS[cat]}"></div><div class="leg-lbl">${CAT_LABELS[cat]||cat}</div><div class="leg-pct">${pct}%</div>`;
+    item.addEventListener('click',()=>filterBy(cat));
+    el.appendChild(item);
+  }
+}
+
+// ══════════════════════════════════════════════════
+// STATS
+// ══════════════════════════════════════════════════
+function renderStats(sources) {
+  const el=document.getElementById('statsRow');
+  const owned=sources.filter(s=>s.cat==='owned').reduce((a,s)=>a+s.share,0);
+  const mnt=sources.filter(s=>s.mentioned==='mentioned').length;
+  el.innerHTML=`
+    <div class="stat"><div class="stat-v">${sources.length}</div><div class="stat-l">Sources</div></div>
+    <div class="stat"><div class="stat-v" style="color:var(--owned)">${owned.toFixed(1)}%</div><div class="stat-l">Part Owned</div></div>
+    <div class="stat"><div class="stat-v" style="color:var(--earned_media)">${mnt}</div><div class="stat-l">Mentionnées</div></div>
+    <div class="stat"><div class="stat-v">${(sources[0]?.share||0).toFixed(2)}%</div><div class="stat-l">Part #1</div></div>`;
+}
+
+// ══════════════════════════════════════════════════
+// FILTERS
+// ══════════════════════════════════════════════════
+function renderFilters(sources) {
+  const el=document.getElementById('filters');
+  el.innerHTML='<span class="f-label">Filtrer</span>';
+  const allBtn=document.createElement('button');
+  allBtn.className='pill'+(state.cats.has('all')?' on':'');allBtn.textContent='Toutes';allBtn.dataset.cat='all';
+  allBtn.addEventListener('click',()=>filterBy('all'));el.appendChild(allBtn);
+  const present=[...new Set(sources.map(s=>s.cat))];
+  for(const cat of CAT_ORDER) {
+    if(!present.includes(cat)) continue;
+    const active=!state.cats.has('all')&&state.cats.has(cat);
+    const btn=document.createElement('button');
+    btn.className='pill'+(active?' on':'');btn.dataset.cat=cat;
+    btn.textContent=CAT_LABELS[cat]||cat;
+    if(active) btn.style.color=CAT_COLORS[cat]||'';
+    btn.addEventListener('click',()=>filterBy(cat));el.appendChild(btn);
+  }
+  const mActive=state.cats.has('_mentioned');
+  const mBtn=document.createElement('button');
+  mBtn.className='pill'+(mActive?' on':'');mBtn.textContent='★ Mentionné';mBtn.dataset.cat='_mentioned';
+  if(mActive) mBtn.style.color='var(--owned)';
+  mBtn.addEventListener('click',()=>filterBy('_mentioned'));el.appendChild(mBtn);
+}
+
+function filterBy(cat) {
+  if(cat==='all') state.cats=new Set(['all']);
+  else if(state.cats.has('all')) state.cats=new Set([cat]);
+  else if(state.cats.has(cat)){state.cats.delete(cat);if(state.cats.size===0) state.cats=new Set(['all']);}
+  else state.cats.add(cat);
+  const s=getSources();renderFilters(s);renderList(s,'srcList',true);
+}
+
+function visible(s) {
+  if(state.cats.has('all')) return true;
+  if(state.cats.has('_mentioned')&&s.mentioned==='mentioned') return true;
+  return state.cats.has(s.cat);
+}
+
+// ══════════════════════════════════════════════════
+// SOURCE LIST
+// ══════════════════════════════════════════════════
+function renderList(sources, cid, applyFilter=false) {
+  const el=document.getElementById(cid);
+  el.innerHTML='';
+  const items=applyFilter ? sources.filter(visible) : sources;
+  if(!items.length){
+    el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><div>Aucune source dans cette catégorie</div></div>';return;
+  }
+  const maxShare=Math.max(...items.map(s=>s.share));
+  items.forEach((s,i)=>{
+    const domain=getDomain(s.page), path=getPath(s.page), col=CAT_COLORS[s.cat]||'#888';
+    const bw=maxShare>0?(s.share/maxShare*100).toFixed(1):0;
+    let delta='';
+    if(s.sD>0) delta=`<span class="delta up">▲ +${s.sD.toFixed(2)}</span>`;
+    else if(s.sD<0) delta=`<span class="delta down">▼ ${s.sD.toFixed(2)}</span>`;
+    else delta='<span class="delta flat">→ 0</span>';
+    let mnt='';
+    if(s.mentioned==='mentioned') mnt='<span class="mnt-badge">★ mentionné</span>';
+    else if(s.mentioned==='undetected') mnt='<span class="undet-badge">? non détecté</span>';
+    const item=document.createElement('div');
+    item.className='src-item';item.style.animationDelay=`${i*0.018}s`;
+    item.innerHTML=`
+      <div class="rank${s.rank<=3?' top':''}">#${s.rank}</div>
+      <div class="src-body">
+        <div class="src-domain">${domain}</div>
+        ${path?`<div class="src-path">${path}</div>`:''}
+        <div class="src-meta">
+          <span class="cat-badge" style="color:${col};border-color:${cc(col,.35)};background:${cc(col,.08)}">${CAT_LABELS[s.cat]||s.cat}</span>
+          ${mnt}
+        </div>
+        <div class="bar-wrap"><div class="bar-fill" style="width:${bw}%;background:${col}"></div></div>
+      </div>
+      <div class="src-right">
+        <div><span class="share-val">${s.share.toFixed(2)}</span><span class="share-unit"> %</span></div>
+        ${delta}
+        <div class="cnt">${s.count}× cité</div>
+      </div>`;
+    el.appendChild(item);
+  });
+}
+
+// ══════════════════════════════════════════════════
+// COMPARE
+// ══════════════════════════════════════════════════
+function renderCompare() {
+  const d=GEO_DATA[state.city];if(!d) return;
+  const q1=d.q1, q2=d.q2;
+  document.getElementById('cmpQ1Text').textContent=q1?.fullLabel||q1?.label||'—';
+  document.getElementById('cmpQ2Text').textContent=q2?.fullLabel||q2?.label||'—';
+  function cmpStats(src,id){
+    const el=document.getElementById(id);
+    const owned=src.filter(s=>s.cat==='owned').reduce((a,s)=>a+s.share,0);
+    el.innerHTML=`<span class="cmp-stat"><span>${src.length}</span> sources</span><span class="cmp-stat">owned <span>${owned.toFixed(1)}%</span></span>`;
+  }
+  if(q1?.sources){cmpStats(q1.sources,'cmpQ1Stats');renderList(q1.sources,'cmpQ1List',false);}
+  if(q2?.sources){cmpStats(q2.sources,'cmpQ2Stats');renderList(q2.sources,'cmpQ2List',false);}
+}
+
+// ══════════════════════════════════════════════════
+// CITY SELECT
+// ══════════════════════════════════════════════════
+function populateCitySelect() {
+  const sel=document.getElementById('citySelect');
+  const cur=sel.value||state.city;sel.innerHTML='';
+  for(const[k,v] of Object.entries(GEO_DATA)){
+    const o=document.createElement('option');o.value=k;o.textContent=v.label||k;if(k===cur) o.selected=true;sel.appendChild(o);
+  }
+}
+
+// ══════════════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════════════
+function getSources(){return GEO_DATA[state.city]?.[state.tab]?.sources||[]}
+
+function render() {
+  const cmp=state.tab==='compare';
+  document.getElementById('singleView').classList.toggle('off',cmp);
+  document.getElementById('cmpView').classList.toggle('off',!cmp);
+  if(cmp){renderCompare();return;}
+  const s=getSources(), qd=GEO_DATA[state.city]?.[state.tab];
+  document.getElementById('queryCard').textContent=qd?.fullLabel||qd?.label||'—';
+  renderDonut(s);renderStats(s);renderFilters(s);renderList(s,'srcList',true);
+}
+
+// ══════════════════════════════════════════════════
+// CSV PARSER
+// ══════════════════════════════════════════════════
+function parseCSV(text) {
+  const lines=text.trim().split('\n');
+  const hdr=[];let cur='',inQ=false;
+  for(const ch of lines[0]){if(ch==='"'){inQ=!inQ;continue;}if(ch===','&&!inQ){hdr.push(cur.trim());cur='';continue;}cur+=ch;}
+  hdr.push(cur.trim());
+  return lines.slice(1).map(ln=>{
+    const vals=[];cur='';inQ=false;
+    for(const ch of ln){if(ch==='"'){inQ=!inQ;continue;}if(ch===','&&!inQ){vals.push(cur.trim());cur='';continue;}cur+=ch;}
+    vals.push(cur.trim());
+    const r={};hdr.forEach((h,i)=>r[h]=vals[i]||'');
+    return {rank:parseInt(r.rank)||0,page:r.page||'',cat:(r['citation category']||r.category||'other').toLowerCase().replace(/\s+/g,'_'),mentioned:r.mentioned||'n/a',count:parseInt(r.count)||0,cD:parseFloat(r['count delta'])||0,share:parseFloat(r.share)||0,sD:parseFloat(r['share delta'])||0};
+  });
+}
+
+// ══════════════════════════════════════════════════
+// EVENTS
+// ══════════════════════════════════════════════════
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  b.classList.add('active');state.tab=b.dataset.tab;state.cats=new Set(['all']);render();
+}));
+document.getElementById('citySelect').addEventListener('change',e=>{state.city=e.target.value;state.cats=new Set(['all']);render();});
+
+const modal=document.getElementById('modalBg');
+document.getElementById('importBtn').addEventListener('click',()=>modal.classList.remove('off'));
+document.getElementById('modalCancel').addEventListener('click',()=>{
+  modal.classList.add('off');state.pendingFile=null;state.pendingParsed=null;
+  document.getElementById('dropName').textContent='';document.getElementById('mCity').value='';
+});
+
+const dz=document.getElementById('dropZone'),fi=document.getElementById('fileInput');
+dz.addEventListener('click',()=>fi.click());
+dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over')});
+dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
+dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f) loadF(f)});
+fi.addEventListener('change',e=>{const f=e.target.files[0];if(f) loadF(f)});
+
+function loadF(file){
+  state.pendingFile=file;document.getElementById('dropName').textContent='✓ '+file.name;
+  const r=new FileReader();r.onload=e=>state.pendingParsed=parseCSV(e.target.result);r.readAsText(file,navigator.language.startsWith('fr')?'utf-8':'utf-8');
+}
+
+document.getElementById('modalConfirm').addEventListener('click',()=>{
+  const name=document.getElementById('mCity').value.trim(),qType=document.getElementById('mQuery').value;
+  if(!name||!state.pendingParsed){alert('Merci de renseigner un nom de ville et un fichier CSV.');return;}
+  const key=name.toLowerCase().replace(/\s+/g,'-').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  if(!GEO_DATA[key]) GEO_DATA[key]={label:name,q1:null,q2:null};
+  GEO_DATA[key][qType]={
+    label:qType==='q1'?'Q1 · Conseil opérateur':'Q2 · Infos locales',
+    fullLabel:`Import · ${state.pendingFile.name}`,
+    sources:state.pendingParsed
+  };
+  state.city=key;state.tab=qType;state.cats=new Set(['all']);
+  populateCitySelect();
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===state.tab));
+  modal.classList.add('off');state.pendingFile=null;state.pendingParsed=null;
+  document.getElementById('dropName').textContent='';document.getElementById('mCity').value='';
+  render();
+});
+
+// INIT
+populateCitySelect();render();
+</script>
+</body>
+</html>
