@@ -2928,5 +2928,1770 @@
         }
       ]
     }
+  },
+  "oud-turnhout": {
+    "label": "Oud-Turnhout",
+    "q1": {
+      "label": "Q1 · Conseil opérateur",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325716003.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "multifiber.be/oud-turnhout/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 3,
+          "share": 14.84,
+          "sD": 9.47
+        },
+        {
+          "rank": 2,
+          "page": "fiberklaar.be/nl/projecten/oud-turnhout",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 10.07,
+          "sD": 10.07
+        },
+        {
+          "rank": 3,
+          "page": "edpnet.be/nl/oud-turnhout-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 2,
+          "share": 7.43,
+          "sD": 5.67
+        },
+        {
+          "rank": 3,
+          "page": "callmepower.be/nl/telecom/gids/vergelijken/fiber",
+          "cat": "earned_media",
+          "mentioned": "mentioned",
+          "count": 3,
+          "cD": 0,
+          "share": 7.43,
+          "sD": 2.34
+        },
+        {
+          "rank": 3,
+          "page": "proximus.be/nl/id_cr_fiber_cities_oud_turnhout/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/de-toekomst-komt-naar-jouw-stad/fcparent/fiberklaar/oud-turnhout.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 2,
+          "share": 7.43,
+          "sD": 5.67
+        },
+        {
+          "rank": 6,
+          "page": "proximus.be/fr/id_cr_fiber_cities_oud_turnhout/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville/fcparent/fiberklaar/oud-turnhout.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 7.41,
+          "sD": 7.41
+        },
+        {
+          "rank": 7,
+          "page": "fiberklaar.be/nl/nieuws/mixtus-een-volgende-internetprovider-op-ons-netwerk",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 6.1,
+          "sD": 6.1
+        },
+        {
+          "rank": 7,
+          "page": "rtv.be/actualiteit-en-nieuws/oud-turnhout-eerste-gemeente-onze-regio-die-volledig-fiberklaar",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 6.1,
+          "sD": 6.1
+        },
+        {
+          "rank": 9,
+          "page": "proximus.be/en/id_b_cl_ookla_nperf_award/companies-and-public-sector/news/news-blog/industry-recognition/best-fiber-award-ookla-nperf.html",
+          "cat": "owned",
+          "mentioned": "mentioned",
+          "count": 1,
+          "cD": 1,
+          "share": 4.76,
+          "sD": 4.76
+        },
+        {
+          "rank": 10,
+          "page": "fiberweb.be/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 3.7,
+          "sD": 3.7
+        },
+        {
+          "rank": 10,
+          "page": "edpnet.be/nl/turnhout-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -3,
+          "share": 3.7,
+          "sD": -5.09
+        },
+        {
+          "rank": 10,
+          "page": "scarlet.be/nl/internet/glasvezel",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -2,
+          "share": 3.7,
+          "sD": -1.38
+        },
+        {
+          "rank": 13,
+          "page": "mixtus.be/2024/06/10/oud-turnhout-is-fiberklaar/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.67,
+          "sD": 2.67
+        },
+        {
+          "rank": 13,
+          "page": "proximusforrealestate.be/artikel/fiber-van-proximus-officieel-snelste-internet-van-het-land/",
+          "cat": "other",
+          "mentioned": "mentioned",
+          "count": 2,
+          "cD": 2,
+          "share": 2.67,
+          "sD": 2.67
+        },
+        {
+          "rank": 13,
+          "page": "fiberklaar.be/nl/providers",
+          "cat": "other",
+          "mentioned": "undetected",
+          "count": 2,
+          "cD": 1,
+          "share": 2.67,
+          "sD": 1
+        },
+        {
+          "rank": 13,
+          "page": "selectra.be/nl/telecom/internet/fiber",
+          "cat": "earned_media",
+          "mentioned": "mentioned",
+          "count": 2,
+          "cD": 0,
+          "share": 2.67,
+          "sD": -0.67
+        },
+        {
+          "rank": 17,
+          "page": "bipt.be/consumenten/telefoon-internet-tv/operatoren-vergelijken/aanbiedingen-vergelijken/lijst-met-de-bestaande-vaste-en-convergente-operatoren",
+          "cat": "earned_institutions",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -3,
+          "share": 1.33,
+          "sD": -5.51
+        },
+        {
+          "rank": 17,
+          "page": "vlotnet.be/internet-turnhout/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 1.33,
+          "sD": -0.42
+        },
+        {
+          "rank": 17,
+          "page": "translate.google.com/translate?u=https%3A%2F%2Fwww.proximus.be%2Fen%2Fid_b_cl_ookla_nperf_award%2Fcompanies-and-public-sector%2Fnews%2Fnews-blog%2Findustry-recognition%2Fbest-fiber-award-ookla-nperf.html&hl=nl&sl=en&tl=nl&client=sge",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.33,
+          "sD": 1.33
+        },
+        {
+          "rank": 17,
+          "page": "tv-internet-abonnement.be/vergelijking-pack/packs-internet-televisie",
+          "cat": "earned_media",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 1,
+          "share": 1.33,
+          "sD": 1.33
+        },
+        {
+          "rank": 17,
+          "page": "astel.be/nl/providers/beschikbaarheid/2360-oud-turnhout?id=1895",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.33,
+          "sD": 1.33
+        }
+      ]
+    },
+    "q2": {
+      "label": "Q2 · Infos locales",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325747484.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "fiberklaar.be/nl/projecten/oud-turnhout",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 4,
+          "share": 13.13,
+          "sD": 10.29
+        },
+        {
+          "rank": 2,
+          "page": "rtv.be/actualiteit-en-nieuws/oud-turnhout-eerste-gemeente-onze-regio-die-volledig-fiberklaar",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 7,
+          "cD": 5,
+          "share": 12.94,
+          "sD": 9.09
+        },
+        {
+          "rank": 3,
+          "page": "mixtus.be/2024/06/10/oud-turnhout-is-fiberklaar/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 6,
+          "share": 10.16,
+          "sD": 10.16
+        },
+        {
+          "rank": 3,
+          "page": "proximus.be/nl/id_cr_fiber_cities_oud_turnhout/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/de-toekomst-komt-naar-jouw-stad/fcparent/fiberklaar/oud-turnhout.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 3,
+          "share": 10.16,
+          "sD": 5.39
+        },
+        {
+          "rank": 5,
+          "page": "multifiber.be/oud-turnhout/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 3,
+          "share": 9.33,
+          "sD": 7.47
+        },
+        {
+          "rank": 6,
+          "page": "glasvezel.be/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 5.28,
+          "sD": 0.73
+        },
+        {
+          "rank": 7,
+          "page": "edpnet.be/nl/oud-turnhout-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 5.16,
+          "sD": 5.16
+        },
+        {
+          "rank": 8,
+          "page": "fiberklaar.be/nl/nieuws/fiberklaar-legt-laatste-hand-aan-netwerk-in-oud-turnhout",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 2,
+          "share": 3.77,
+          "sD": 2.84
+        },
+        {
+          "rank": 9,
+          "page": "edpnet.be/nl/turnhout-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -3,
+          "share": 2.78,
+          "sD": -4.27
+        },
+        {
+          "rank": 9,
+          "page": "gathering.tweakers.net/forum/list_messages/2076772",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.78,
+          "sD": 2.78
+        },
+        {
+          "rank": 9,
+          "page": "proximus.be/fr/id_cr_fiber_cities_oud_turnhout/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville/fcparent/fiberklaar/oud-turnhout.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.78,
+          "sD": 2.78
+        },
+        {
+          "rank": 9,
+          "page": "reddit.com/r/belgium/comments/1kufx27",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.78,
+          "sD": 2.78
+        },
+        {
+          "rank": 13,
+          "page": "fiberklaar.be/nl/fibercheck-adres",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 2.58,
+          "sD": 0.73
+        },
+        {
+          "rank": 14,
+          "page": "vlotnet.be/internet-oud-turnhout/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.5,
+          "sD": 2.5
+        },
+        {
+          "rank": 15,
+          "page": "fiberklaar.be/nl/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 1,
+          "share": 2.38,
+          "sD": 1.46
+        },
+        {
+          "rank": 16,
+          "page": "nieuwsblad.be/regio/antwerpen/kempen/turnhout/klachtenstroom-over-aanleg-glasvezelkabels-door-fiberklaar-we-zouden-alsnog-350-euro-moeten-betalen/54304633.html",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.39,
+          "sD": 1.39
+        },
+        {
+          "rank": 16,
+          "page": "glasvezelinfo.be/nl/glasvezelkaart",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -2,
+          "share": 1.39,
+          "sD": -6.46
+        },
+        {
+          "rank": 16,
+          "page": "internethunter.be/oud-turnhout/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.39,
+          "sD": 1.39
+        },
+        {
+          "rank": 16,
+          "page": "proximus.be/nl/id_cr_fiber_checktool/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/komt-fiber-naar-je-toe.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 1.39,
+          "sD": 0.46
+        },
+        {
+          "rank": 20,
+          "page": "www2.telenet.be/nl/business/klantenservice/hoe-uw-diensten-aansluiten-en-installeren/",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 20,
+          "page": "tweakers.net/nieuws/210634/telenet-en-fluvius-starten-vanaf-juli-met-aanleg-wyre-glasvezelnetwerk-in-belgie.html",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 20,
+          "page": "telecompaper.com/nieuws/vraagbundelingscampagne-fiberklaar-in-oud-turnhout-behaalt-benodigde-20-procent-aanmeldingen--1420252",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 20,
+          "page": "fiberklaar.be/nl/check-jouw-adres",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 20,
+          "page": "www2.telenet.be/content/dam/www-telenet-touch/nl/klantenservice/algemeen/handleidingen-en-docs/fiberbrochure.pdf",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        }
+      ]
+    }
+  },
+  "ottignies---lln": {
+    "label": "Ottignies - LLN",
+    "q1": {
+      "label": "Q1 · Conseil opérateur",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325370611.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "proximus.be/fr/id_cr_fiber_checktool/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/la-fibre-est-elle-disponible-chez-vous.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 3,
+          "share": 11.57,
+          "sD": 8.54
+        },
+        {
+          "rank": 1,
+          "page": "infofibre.be/fr/carte-de-la-fibre-optique",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 11.57,
+          "sD": 11.57
+        },
+        {
+          "rank": 3,
+          "page": "www2.telenet.be/residential/fr/reseau/fibre.html",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 6.25,
+          "sD": 6.25
+        },
+        {
+          "rank": 3,
+          "page": "unifiber.be/communes/4",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 6.25,
+          "sD": 6.25
+        },
+        {
+          "rank": 5,
+          "page": "olln.be/fr/vivre-a-olln/mobilite-et-stationnement/chantiers-voiries/ottignies-chantier-de-pose-de-fibre-optique-rue-des-deux-ponts-avenue-paul-delvaux-et-chausse-de-la-croix-du-3-au-19-novembre",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 5.32,
+          "sD": 5.32
+        },
+        {
+          "rank": 5,
+          "page": "lavenir.net/regions/brabantwallon/ottignies-louvain-la-neuve/2026/02/13/pose-de-la-fibre-optique-la-rue-du-monument-la-rue-des-deux-ponts-et-la-chaussee-de-la-croix-seront-temporairement-a-sens-unique-a-ottignies-louvain-la-neuve-IWYDJI6AN5CK7HR7COKLJ5DHHI/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 5.32,
+          "sD": 5.32
+        },
+        {
+          "rank": 7,
+          "page": "internethunter.be/ottignies-louvain-la-neuve/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "olln.be/fr/vie-communale/administration-communale/tous-les-services-communaux/information-et-communication/olln-info/2022/236-olln-mai-2022.pdf/%40%40download/file/236%2520olln%2520mai-2022.pdf",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "tvcom.be/info/societe/demarrage-du-deploiement-de-la-fibre-optique-wavre/50786",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "proximus.be/en/fiber",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 11,
+          "page": "proximus.be/fr/id_cr_fiber_cities_leuven/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville/fcparent/pxs/leuven.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 11,
+          "page": "unifiber.be/communes/40",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 11,
+          "page": "economie.fgov.be/fr/themes/line/broadband-competence-office/outils-pour-le-deploiement-de",
+          "cat": "earned_institutions",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 14,
+          "page": "facebook.com/VilledeOLLN/posts/-le-d%C3%A9ploiement-de-la-fibre-optique-continue-%C3%A0-ottignies-un-nouveau-chantier-aur/1153904900214210/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.94,
+          "sD": 2.94
+        },
+        {
+          "rank": 15,
+          "page": "internethunter.be/ottignies-louvain-la-neuve/louvain-la-neuve/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.5,
+          "sD": 2.5
+        },
+        {
+          "rank": 15,
+          "page": "reddit.com/r/belgium/comments/1q6fxnn/fiber_to_the_home_ftth_coverage_map_as_of_q4_2025/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.5,
+          "sD": 2.5
+        },
+        {
+          "rank": 17,
+          "page": "unifiber.be/fiber_map",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 1,
+          "share": 2.38,
+          "sD": 0.87
+        },
+        {
+          "rank": 18,
+          "page": "facebook.com/unifiber.be/videos/-comment-se-passe-linstallation-de-la-fibre-chez-vous-%EF%B8%8F-lors-du-premier-rendez-v/1061167642249587/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.47,
+          "sD": 1.47
+        },
+        {
+          "rank": 19,
+          "page": "unifiber.be/communes/19",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "economie.gouv.fr/particuliers/numerique-et-cybersecurite/tres-haut-debit-etes-vous-eligible-la-fibre-optique",
+          "cat": "earned_institutions",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "proximus.be/fr/id_cr_fiber_cities/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "facebook.com/proximus/videos/la-fibre-chez-vous/1439017634054213/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "voo.be/fr/internet/giga",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 1.19,
+          "sD": -2.51
+        },
+        {
+          "rank": 19,
+          "page": "olln.be/fr/vivre-a-olln/mobilite-et-stationnement/chantiers-voiries/ottignies-pose-de-la-fibre-optique-rue-de-la-station-rue-de-franquenies-rue-du-monument-jusquau-22-08-2025",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "google.com/viewer/place?mid=%2Fg%2F11q8slt_yd",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "voo.be/fr/internet",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        }
+      ]
+    },
+    "q2": {
+      "label": "Q2 · Infos locales",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325403776.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "proximus.be/fr/id_cr_fiber_checktool/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/la-fibre-est-elle-disponible-chez-vous.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 3,
+          "share": 11.57,
+          "sD": 8.54
+        },
+        {
+          "rank": 1,
+          "page": "infofibre.be/fr/carte-de-la-fibre-optique",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 11.57,
+          "sD": 11.57
+        },
+        {
+          "rank": 3,
+          "page": "www2.telenet.be/residential/fr/reseau/fibre.html",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 6.25,
+          "sD": 6.25
+        },
+        {
+          "rank": 3,
+          "page": "unifiber.be/communes/4",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 6.25,
+          "sD": 6.25
+        },
+        {
+          "rank": 5,
+          "page": "olln.be/fr/vivre-a-olln/mobilite-et-stationnement/chantiers-voiries/ottignies-chantier-de-pose-de-fibre-optique-rue-des-deux-ponts-avenue-paul-delvaux-et-chausse-de-la-croix-du-3-au-19-novembre",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 5.32,
+          "sD": 5.32
+        },
+        {
+          "rank": 5,
+          "page": "lavenir.net/regions/brabantwallon/ottignies-louvain-la-neuve/2026/02/13/pose-de-la-fibre-optique-la-rue-du-monument-la-rue-des-deux-ponts-et-la-chaussee-de-la-croix-seront-temporairement-a-sens-unique-a-ottignies-louvain-la-neuve-IWYDJI6AN5CK7HR7COKLJ5DHHI/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 5.32,
+          "sD": 5.32
+        },
+        {
+          "rank": 7,
+          "page": "internethunter.be/ottignies-louvain-la-neuve/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "olln.be/fr/vie-communale/administration-communale/tous-les-services-communaux/information-et-communication/olln-info/2022/236-olln-mai-2022.pdf/%40%40download/file/236%2520olln%2520mai-2022.pdf",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "tvcom.be/info/societe/demarrage-du-deploiement-de-la-fibre-optique-wavre/50786",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 7,
+          "page": "proximus.be/en/fiber",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 5,
+          "sD": 5
+        },
+        {
+          "rank": 11,
+          "page": "proximus.be/fr/id_cr_fiber_cities_leuven/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville/fcparent/pxs/leuven.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 11,
+          "page": "unifiber.be/communes/40",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 11,
+          "page": "economie.fgov.be/fr/themes/line/broadband-competence-office/outils-pour-le-deploiement-de",
+          "cat": "earned_institutions",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 4.13,
+          "sD": 4.13
+        },
+        {
+          "rank": 14,
+          "page": "facebook.com/VilledeOLLN/posts/-le-d%C3%A9ploiement-de-la-fibre-optique-continue-%C3%A0-ottignies-un-nouveau-chantier-aur/1153904900214210/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.94,
+          "sD": 2.94
+        },
+        {
+          "rank": 15,
+          "page": "internethunter.be/ottignies-louvain-la-neuve/louvain-la-neuve/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.5,
+          "sD": 2.5
+        },
+        {
+          "rank": 15,
+          "page": "reddit.com/r/belgium/comments/1q6fxnn/fiber_to_the_home_ftth_coverage_map_as_of_q4_2025/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.5,
+          "sD": 2.5
+        },
+        {
+          "rank": 17,
+          "page": "unifiber.be/fiber_map",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 1,
+          "share": 2.38,
+          "sD": 0.87
+        },
+        {
+          "rank": 18,
+          "page": "facebook.com/unifiber.be/videos/-comment-se-passe-linstallation-de-la-fibre-chez-vous-%EF%B8%8F-lors-du-premier-rendez-v/1061167642249587/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.47,
+          "sD": 1.47
+        },
+        {
+          "rank": 19,
+          "page": "unifiber.be/communes/19",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "economie.gouv.fr/particuliers/numerique-et-cybersecurite/tres-haut-debit-etes-vous-eligible-la-fibre-optique",
+          "cat": "earned_institutions",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "proximus.be/fr/id_cr_fiber_cities/particuliers/abonnements-internet-pour-tous/la-fibre-optique-debarque-chez-vous/le-futur-arrive-dans-votre-ville.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "facebook.com/proximus/videos/la-fibre-chez-vous/1439017634054213/",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "voo.be/fr/internet/giga",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 1.19,
+          "sD": -2.51
+        },
+        {
+          "rank": 19,
+          "page": "olln.be/fr/vivre-a-olln/mobilite-et-stationnement/chantiers-voiries/ottignies-pose-de-la-fibre-optique-rue-de-la-station-rue-de-franquenies-rue-du-monument-jusquau-22-08-2025",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "google.com/viewer/place?mid=%2Fg%2F11q8slt_yd",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        },
+        {
+          "rank": 19,
+          "page": "voo.be/fr/internet",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.19,
+          "sD": 1.19
+        }
+      ]
+    }
+  },
+  "sint-niklaas": {
+    "label": "Sint-Niklaas",
+    "q1": {
+      "label": "Q1 · Conseil opérateur",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325137011.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "sint-niklaas.be/onze-dienstverlening/wonen/aansluiting-nutsvoorzieningen/glasvezelnetwerk-fiberklaar",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 6,
+          "share": 12.65,
+          "sD": 12.65
+        },
+        {
+          "rank": 2,
+          "page": "vlotnet.be/internet-sint-niklaas/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 11.26,
+          "sD": 11.26
+        },
+        {
+          "rank": 3,
+          "page": "internethunter.be/sint-niklaas/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 8.67,
+          "sD": 8.67
+        },
+        {
+          "rank": 4,
+          "page": "fiberklaar.be/nl/nieuws/sint-niklaas-getuigt-over-haar-keuze-voor-fiber",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 5.17,
+          "sD": 5.17
+        },
+        {
+          "rank": 5,
+          "page": "reddit.com/r/belgium/comments/1j2ha54/which_is_the_best_fiber_internet_provider_company/?tl=nl",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 4.6,
+          "sD": 4.6
+        },
+        {
+          "rank": 5,
+          "page": "edpnet.be/nl/sint-niklaas-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 4,
+          "cD": 4,
+          "share": 4.6,
+          "sD": 4.6
+        },
+        {
+          "rank": 7,
+          "page": "multifiber.be/fiberklaar/st-niklaas/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 3.17,
+          "sD": 3.17
+        },
+        {
+          "rank": 7,
+          "page": "fiberklaar.be/nl/nieuws/mixtus-een-volgende-internetprovider-op-ons-netwerk",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 3.17,
+          "sD": 3.17
+        },
+        {
+          "rank": 9,
+          "page": "selectra.be/nl/telecom/internet/fiber",
+          "cat": "earned_media",
+          "mentioned": "mentioned",
+          "count": 3,
+          "cD": 3,
+          "share": 2.74,
+          "sD": 2.74
+        },
+        {
+          "rank": 10,
+          "page": "proximus.be/nl/id_cr_fiber_cities_sint_niklaas/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/de-toekomst-komt-naar-jouw-stad/fcparent/pxs/sint-niklaas.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.69,
+          "sD": 2.69
+        },
+        {
+          "rank": 11,
+          "page": "gathering.tweakers.net/forum/list_messages/2076772",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.3,
+          "sD": 2.3
+        },
+        {
+          "rank": 12,
+          "page": "glasvezelprovider.nl",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 2,
+          "sD": -0.5
+        },
+        {
+          "rank": 12,
+          "page": "glasvezel.be/sint-niklaas",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2,
+          "sD": 2
+        },
+        {
+          "rank": 12,
+          "page": "fiber.nl",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2,
+          "sD": 2
+        },
+        {
+          "rank": 15,
+          "page": "test-aankoop.be/hightech/telecom/simulator",
+          "cat": "earned_institutions",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "fiberklaar.be/nl/providers",
+          "cat": "other",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": -1,
+          "share": 1.82,
+          "sD": -0.68
+        },
+        {
+          "rank": 15,
+          "page": "proximus.be/nl/id_cr_fiber_checktool/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/komt-fiber-naar-je-toe.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "hln.be/sint-niklaas/fiberklaar-brengt-fibernetwerk-naar-sint-niklaas~a8b511c8/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "reddit.com/r/belgium/comments/1j2ha54",
+          "cat": "social",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "fastfiber.be/en/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "edpnet.be/en/home/internet.html",
+          "cat": "other",
+          "mentioned": "mentioned",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "reddit.com/r/belgium/comments/1j2ha54/which_is_the_best_fiber_internet_provider_company/",
+          "cat": "social",
+          "mentioned": "mentioned",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 15,
+          "page": "fiberklaar.be/nl/projecten/sint-niklaas",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 24,
+          "page": "astel.be/nl/providers/beschikbaarheid/9100-sint-niklaas?id=2475",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 1.74,
+          "sD": 1.74
+        },
+        {
+          "rank": 24,
+          "page": "fiberklaar.be/nl/fibercheck-adres",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": -2,
+          "share": 1.74,
+          "sD": -3.66
+        },
+        {
+          "rank": 26,
+          "page": "google.com/viewer/place?mid=%2Fg%2F1tmkk3vz",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.43,
+          "sD": 1.43
+        },
+        {
+          "rank": 26,
+          "page": "callmepower.be/nl/telecom/gids/vergelijken/fiber",
+          "cat": "earned_media",
+          "mentioned": "mentioned",
+          "count": 1,
+          "cD": -3,
+          "share": 1.43,
+          "sD": -3.97
+        },
+        {
+          "rank": 26,
+          "page": "proximus.com/nl/news/2020/20201125-proximus-brings-fiber-network-to-mechelen-and-sintniklaas.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.43,
+          "sD": 1.43
+        },
+        {
+          "rank": 29,
+          "page": "glasdraad.nl",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "glasdraadzeeuwsvlaanderen.nl/serviceproviders.php",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "keuze.nl/internet/beste-glasvezel-provider",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": -1,
+          "share": 1,
+          "sD": -1.5
+        },
+        {
+          "rank": 29,
+          "page": "keuze.nl/nieuws/welke-glasvezel-aanbieders-leveren-op-mijn-adres",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 1,
+          "sD": -0.25
+        },
+        {
+          "rank": 29,
+          "page": "consumentenbond.nl/internet/glasvezel",
+          "cat": "earned_institutions",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "internethunter.be/glasvezel/",
+          "cat": "earned_media",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": 0,
+          "share": 1,
+          "sD": -0.25
+        },
+        {
+          "rank": 29,
+          "page": "kpn.com/internet/glasvezel/lokale-glasvezelaanbieder",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "glasdraad.nl/initiatieven/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 37,
+          "page": "fiberklaar.be/nl/over-ons",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 0.87,
+          "sD": -0.27
+        }
+      ]
+    },
+    "q2": {
+      "label": "Q2 · Infos locales",
+      "fullLabel": "Import · profound_prompt_citations_export_1776325086386.csv",
+      "sources": [
+        {
+          "rank": 1,
+          "page": "sint-niklaas.be/onze-dienstverlening/wonen/aansluiting-nutsvoorzieningen/glasvezelnetwerk-fiberklaar",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 7,
+          "cD": 7,
+          "share": 8.53,
+          "sD": 8.53
+        },
+        {
+          "rank": 2,
+          "page": "multifiber.be/fiberklaar/st-niklaas/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 6,
+          "share": 7.53,
+          "sD": 7.53
+        },
+        {
+          "rank": 3,
+          "page": "glasvezel.be/sint-niklaas",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 6.8,
+          "sD": 6.8
+        },
+        {
+          "rank": 4,
+          "page": "edpnet.be/nl/sint-niklaas-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 6,
+          "cD": 6,
+          "share": 5.89,
+          "sD": 5.89
+        },
+        {
+          "rank": 5,
+          "page": "fiberklaar.be/nl/projecten/sint-niklaas",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 5.71,
+          "sD": 5.71
+        },
+        {
+          "rank": 6,
+          "page": "proximus.be/nl/id_cr_fiber_cities_sint_niklaas/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/de-toekomst-komt-naar-jouw-stad/fcparent/pxs/sint-niklaas.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 5,
+          "cD": 5,
+          "share": 4.89,
+          "sD": 4.89
+        },
+        {
+          "rank": 7,
+          "page": "internethunter.be/sint-niklaas/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 3.86,
+          "sD": 3.86
+        },
+        {
+          "rank": 8,
+          "page": "edpnet.be/nl/Sint-Niklaas-fiberklaar.html",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 3.64,
+          "sD": 3.64
+        },
+        {
+          "rank": 9,
+          "page": "fiberklaar.be/nl/fibercheck-adres",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 2,
+          "share": 3.06,
+          "sD": 1.74
+        },
+        {
+          "rank": 9,
+          "page": "fiberklaar.be/nl/nieuws/fiber-in-sint-niklaas-onze-technici-zijn-daar",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 3,
+          "cD": 3,
+          "share": 3.06,
+          "sD": 3.06
+        },
+        {
+          "rank": 11,
+          "page": "fiberklaar.be/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.86,
+          "sD": 2.86
+        },
+        {
+          "rank": 11,
+          "page": "glasvezelinfo.be/nl/aanbod-belgie",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.86,
+          "sD": 2.86
+        },
+        {
+          "rank": 11,
+          "page": "eurofiber.com/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.86,
+          "sD": 2.86
+        },
+        {
+          "rank": 11,
+          "page": "sint-niklaas.be/onze-dienstverlening/wonen/aansluiting-nutsvoorzieningen/telefoon-televisie-en-internet",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.86,
+          "sD": 2.86
+        },
+        {
+          "rank": 11,
+          "page": "vlotnet.be/internet-sint-niklaas/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 2.86,
+          "sD": 2.86
+        },
+        {
+          "rank": 16,
+          "page": "proximus.be/en/id_cr_fiber_cities_sint_niklaas/personal/internet-subscriptions-for-all/fiber-to-your-home/the-future-comes-to-your-city/fcparent/pxs/sint-niklaas.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2.82,
+          "sD": 2.82
+        },
+        {
+          "rank": 17,
+          "page": "fiberklaar.be/nl/nieuws/sint-niklaas-getuigt-over-haar-keuze-voor-fiber",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2,
+          "sD": 2
+        },
+        {
+          "rank": 17,
+          "page": "utp-kabel.nl/glasvezel-fiber-for-belgium",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 2,
+          "sD": -0.5
+        },
+        {
+          "rank": 17,
+          "page": "glasvezelinfo.be/nl/vragen-en-antwoorden/eindgebruikers",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 2,
+          "sD": 2
+        },
+        {
+          "rank": 17,
+          "page": "glasvezel.be",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 2,
+          "sD": -0.5
+        },
+        {
+          "rank": 21,
+          "page": "tweakers.net/reviews/10326/glasvezel-in-belgie-hoever-is-de-uitrol-van-fiber-to-the-home.html",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 1.94,
+          "sD": 1.94
+        },
+        {
+          "rank": 22,
+          "page": "reddit.com/r/belgium/comments/18ns06y",
+          "cat": "social",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 22,
+          "page": "fiberweb.be/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 22,
+          "page": "hln.be/sint-niklaas/fiberklaar-brengt-fibernetwerk-naar-sint-niklaas~a8b511c8/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.82,
+          "sD": 1.82
+        },
+        {
+          "rank": 25,
+          "page": "fiberklaar.be/nl/",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 0,
+          "share": 1.67,
+          "sD": -0.83
+        },
+        {
+          "rank": 25,
+          "page": "astel.be/nl/providers/beschikbaarheid/9100-sint-niklaas?id=2475",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 2,
+          "cD": 2,
+          "share": 1.67,
+          "sD": 1.67
+        },
+        {
+          "rank": 27,
+          "page": "fiber4flanders.be/nl/afspraak",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.11,
+          "sD": 1.11
+        },
+        {
+          "rank": 27,
+          "page": "hln.be/tech/in-kaart-kijk-hier-of-er-in-je-straat-glasvezel-voor-sneller-internet-beschikbaar-is~a9229798/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1.11,
+          "sD": 1.11
+        },
+        {
+          "rank": 29,
+          "page": "internethunter.be/glasvezel/",
+          "cat": "earned_media",
+          "mentioned": "undetected",
+          "count": 1,
+          "cD": -1,
+          "share": 1,
+          "sD": -1.5
+        },
+        {
+          "rank": 29,
+          "page": "made-in.be/oost-vlaanderen/fiberklaar-komt-naar-sint-niklaas-met-fibernetwerk/",
+          "cat": "earned_media",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "itechs.be/diensten/fiberaansluiting-sint-niklaas",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 29,
+          "page": "utp-kabel.be/glasvezel-fiber-for-belgium",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 1,
+          "sD": 1
+        },
+        {
+          "rank": 33,
+          "page": "www2.telenet.be/residential/nl/klantenservice/internet/installatie/je-woning-verbinden-met-het-fibernetwerk.html",
+          "cat": "competition",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 0.83,
+          "sD": 0.83
+        },
+        {
+          "rank": 33,
+          "page": "proximus.be/nl/fiber/fiberklaar",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 0.83,
+          "sD": 0.83
+        },
+        {
+          "rank": 33,
+          "page": "proximus.be/nl/id_cr_fiber_cities/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/de-toekomst-komt-naar-jouw-stad.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 0.83,
+          "sD": -0.48
+        },
+        {
+          "rank": 33,
+          "page": "proximus.be/nl/id_cr_fiber_checktool/particulieren/internetabonnementen-voor-iedereen/fiber-tot-in-je-woning/komt-fiber-naar-je-toe.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 0.83,
+          "sD": 0.83
+        },
+        {
+          "rank": 33,
+          "page": "proximus.be/nl/id_cb_fiber_checktool/zelfstandigen-en-kleine-bedrijven/pack-internet-kmo-pme/fiber-voor-jouw-zaak/komt-fiber-naar-je-toe.html",
+          "cat": "owned",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 0,
+          "share": 0.83,
+          "sD": -0.48
+        },
+        {
+          "rank": 33,
+          "page": "google.com/viewer/place?mid=%2Fg%2F1tmkk3vz",
+          "cat": "other",
+          "mentioned": "n/a",
+          "count": 1,
+          "cD": 1,
+          "share": 0.83,
+          "sD": 0.83
+        }
+      ]
+    }
   }
 }
